@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Obadia Yano - Data & Tech Innovator</title>
+  <title>Obadia Yano - Simple Landing</title>
 
   <!-- Google Analytics 4 tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VT8NQP1GQ"></script>
@@ -16,173 +16,42 @@
   </script>
 
   <style>
-    /* Reset and base styles */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
     body, html {
       margin: 0; padding: 0;
-      height: 100%;
-      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      background: #203a43;
+      color: #fff;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow: hidden;
-      position: relative;
     }
-
-    /* Animated gradient background */
-    @keyframes gradientShift {
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
-    }
-
-    body {
-      background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #0f2027);
-      background-size: 800% 800%;
-      animation: gradientShift 25s ease infinite;
-    }
-
-    /* Container with glassmorphism */
     .container {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-      padding: 3rem 4rem;
-      max-width: 700px;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      position: relative;
-      z-index: 10;
+      max-width: 600px;
+      padding: 2rem;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
     }
-
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      letter-spacing: 0.1rem;
-      margin-bottom: 1rem;
-      color: #ffcc00;
-      text-shadow: 0 0 8px #ffcc00, 0 0 15px #ffaa00;
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-      transform: translateY(30px);
-      animation-delay: 0.3s;
-    }
-
-    p {
-      font-size: 1.25rem;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      color: #dcdcdc;
-      text-shadow: 0 0 3px rgba(0,0,0,0.4);
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-      transform: translateY(30px);
-      animation-delay: 0.6s;
-    }
-
-    a.link-button {
-      display: inline-block;
-      padding: 0.85rem 2.5rem;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #0f2027;
-      background: #ffcc00;
-      border-radius: 50px;
+    a {
+      color: #ffd700;
       text-decoration: none;
-      box-shadow: 0 6px 20px rgba(255,204,0,0.6);
-      transition: all 0.3s ease;
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-      transform: translateY(30px);
-      animation-delay: 0.9s;
-      user-select: none;
+      font-weight: bold;
     }
-
-    a.link-button:hover,
-    a.link-button:focus {
-      background: #ffaa00;
-      box-shadow: 0 8px 25px rgba(255,170,0,0.85);
-      transform: translateY(-3px);
-      outline: none;
-    }
-
-    /* Fade in and move up animation */
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Subtle floating dots background */
-    .dots-container {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .dot {
-      position: absolute;
-      background: rgba(255, 204, 0, 0.15);
-      border-radius: 50%;
-      animation: floatUp 15s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes floatUp {
-      0% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
-  <div class="dots-container" aria-hidden="true">
-    <!-- Generate floating dots dynamically with JS -->
-  </div>
-
-  <div class="container" role="main" aria-label="Landing page introduction">
+  <div class="container">
     <h1>Obadia Yano — Data & Tech Innovator</h1>
     <p>
-      Proficient in data analysis, statistical modeling, and visualization using Python (Pandas, NumPy, Matplotlib), R, and SQL. Experienced in building interactive dashboards with Power BI and Tableau, I transform complex data into actionable business insights. Skilled in web development with Django and React, combining backend and frontend expertise to deliver full-stack solutions. My background in economics and statistics enables me to apply quantitative methods effectively in real-world scenarios. Passionate about leveraging technology to solve problems and drive data-informed decisions.
+      Proficient in data analysis, statistical modeling, and visualization using Python, R, and SQL. Experienced with Power BI, Tableau, Django, React, and more.
     </p>
-    <a href="https://www.linkedin.com/in/obadia-yano-761025238/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="Visit Obadia Yano LinkedIn profile">Connect on LinkedIn</a>
+    <p>
+      <a href="https://www.linkedin.com/in/obadia-yano-761025238/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+    </p>
   </div>
-
-  <script>
-    // Create floating dots effect
-    const container = document.querySelector('.dots-container');
-    const colors = ['rgba(255,204,0,0.15)', 'rgba(255,204,0,0.1)'];
-    const dotCount = 40;
-
-    for(let i = 0; i < dotCount; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      dot.style.width = `${Math.random() * 12 + 6}px`;
-      dot.style.height = dot.style.width;
-      dot.style.left = `${Math.random() * 100}vw`;
-      dot.style.animationDuration = `${10 + Math.random() * 15}s`;
-      dot.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      dot.style.animationDelay = `${Math.random() * 15}s`;
-      container.appendChild(dot);
-    }
-  </script>
-
 </body>
 </html>
