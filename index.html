@@ -1,57 +1,105 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Obadia Yano - Simple Landing</title>
-
-  <!-- Google Analytics 4 tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VT8NQP1GQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3VT8NQP1GQ');
-  </script>
-
-  <style>
-    body, html {
-      margin: 0; padding: 0;
-      font-family: Arial, sans-serif;
-      background: #203a43;
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .container {
-      max-width: 600px;
-      padding: 2rem;
-      background: rgba(0,0,0,0.6);
-      border-radius: 12px;
-    }
-    a {
-      color: #ffd700;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obadia Yano | Data Analytics Software Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Obadia Yano — Data & Tech Innovator</h1>
+  <header>
+    <div class="profile-section">
+      <img src="profile.jpg" alt="Obadia Yano" class="profile-pic" />
+      <h1>Obadia Yano</h1>
+      <p class="subtitle">Data Analytics Software Developer & Freelance Analyst</p>
+      <button id="theme-toggle">🌙 Dark Mode</button>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#freelance">Freelance</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
     <p>
-      Proficient in data analysis, statistical modeling, and visualization using Python, R, and SQL. Experienced with Power BI, Tableau, Django, React, and more.
+      I’m <strong>Obadia Yano</strong>, a Data Analytics Software Developer passionate about building intelligent tools 
+      and systems that turn data into business value. I specialize in developing interactive dashboards, 
+      automating data workflows, and creating scalable solutions for analytics and reporting. 
+      My mission is to empower teams with data-driven insights that inspire confident decision-making.
     </p>
+  </section>
+
+  <section id="skills" class="fade-in">
+    <h2>Professional Skills</h2>
+    <ul class="skills-list">
+      <li>Data Analytics Software Development</li>
+      <li>Python (Pandas, NumPy, Matplotlib, Dash)</li>
+      <li>SQL & Database Design</li>
+      <li>Power BI & Data Visualization</li>
+      <li>Excel (Advanced Formulas & Automation)</li>
+      <li>Machine Learning & Predictive Modeling</li>
+      <li>API Integration & Data Automation</li>
+      <li>Web Development for Data Visualization</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Sales Performance Dashboard</h3>
+        <p>
+          Designed a Power BI dashboard integrating SQL data sources to monitor regional performance KPIs, 
+          increasing reporting efficiency by 40%.
+        </p>
+        <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
+      </div>
+      <div class="project-card">
+        <h3>Data Automation Script</h3>
+        <p>
+          Built a Python-based automation workflow to clean and merge raw Excel data, 
+          reducing manual reporting time from 3 hours to 15 minutes.
+        </p>
+        <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
+      </div>
+      <div class="project-card">
+        <h3>Machine Learning Forecast App</h3>
+        <p>
+          Developed a predictive analytics dashboard using Python and Dash to forecast product demand 
+          for retail businesses.
+        </p>
+        <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="freelance" class="fade-in">
+    <h2>Freelance Services</h2>
     <p>
-      <a href="https://www.linkedin.com/in/obadia-yano-761025238/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      I offer freelance services in <strong>data analytics, software development, and business automation</strong>. 
+      I help clients transform their raw data into clear insights and functional tools. 
+      Whether you need a Power BI dashboard, a data automation pipeline, or a web-based analytics app — I can build it.
     </p>
-  </div>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/obadia-yano-761025238/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/YanoObed" target="_blank">GitHub</a></li>
+      <li><a href="https://upwork.com/freelancers/~016cd408593ab0bb49" target="_blank">Upwork</a></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <p>Email me directly: <a href="mailto:obadiayano45@gmail.com">obadiayano45@gmail.com</a></p>
+    <a href="https://upwork.com/freelancers/~016cd408593ab0bb49" target="_blank" class="hire-btn">💼 Hire Me on Upwork</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Obadia Yano | Designed and Developed by Me</p>
+  </footer>
 </body>
 </html>
