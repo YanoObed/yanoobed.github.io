@@ -229,39 +229,35 @@ footer {
 
 /* Blue Styling for Professional Links & Buttons */
 /* Blue color for LinkedIn, GitHub, Upwork, and "View Project" links */
-a[href*="linkedin"],
-a[href*="github"],
-a[href*="upwork"],
-a[href*="fiverr"],
-.project-card a {
+.links a[href*="linkedin"],
+.links a[href*="github"],
+.links a[href*="upwork"],
+.links a[href*="fiverr"] {
   color: #007bff; /* bright blue */
   text-decoration: none;
   font-weight: normal;
 }
 
-a[href*="linkedin"]:hover,
-a[href*="github"]:hover,
-a[href*="upwork"]:hover,
-a[href*="fiverr"]:hover,
-.project-card a:hover {
+.links a[href*="linkedin"]:hover,
+.links a[href*="github"]:hover,
+.links a[href*="upwork"]:hover,
+.links a[href*="fiverr"]:hover {
   color: #0056b3; /* darker blue on hover */
   text-decoration: underline;
 }
 
-/* Adjust for dark mode (lighter blue for better contrast) */
-body.dark a[href*="linkedin"],
-body.dark a[href*="github"],
-body.dark a[href*="upwork"],
-body.dark a[href*="fiverr"],
-body.dark .project-card a {
+/* Dark mode */
+body.dark .links a[href*="linkedin"],
+body.dark .links a[href*="github"],
+body.dark .links a[href*="upwork"],
+body.dark .links a[href*="fiverr"] {
   color: #66aaff;
 }
 
-body.dark a[href*="linkedin"]:hover,
-body.dark a[href*="github"]:hover,
-body.dark a[href*="upwork"]:hover,
-body.dark a[href*="fiverr"]:hover,
-body.dark .project-card a:hover {
+body.dark .links a[href*="linkedin"]:hover,
+body.dark .links a[href*="github"]:hover,
+body.dark .links a[href*="upwork"]:hover,
+body.dark .links a[href*="fiverr"]:hover {
   color: #99cfff;
 }
 
@@ -294,3 +290,4 @@ body.dark .hire-btn:hover {
   background: #99cfff;
   color: #0a192f;
 }
+
