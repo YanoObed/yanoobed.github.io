@@ -232,13 +232,17 @@ footer {
 a[href*="linkedin"],
 a[href*="github"],
 a[href*="upwork"],
+a[href*="fiverr"],
 .project-card a {
   color: #007bff; /* bright blue */
+  text-decoration: none;
+  font-weight: normal;
 }
 
 a[href*="linkedin"]:hover,
 a[href*="github"]:hover,
 a[href*="upwork"]:hover,
+a[href*="fiverr"]:hover,
 .project-card a:hover {
   color: #0056b3; /* darker blue on hover */
   text-decoration: underline;
@@ -248,6 +252,7 @@ a[href*="upwork"]:hover,
 body.dark a[href*="linkedin"],
 body.dark a[href*="github"],
 body.dark a[href*="upwork"],
+body.dark a[href*="fiverr"],
 body.dark .project-card a {
   color: #66aaff;
 }
@@ -255,6 +260,7 @@ body.dark .project-card a {
 body.dark a[href*="linkedin"]:hover,
 body.dark a[href*="github"]:hover,
 body.dark a[href*="upwork"]:hover,
+body.dark a[href*="fiverr"]:hover,
 body.dark .project-card a:hover {
   color: #99cfff;
 }
@@ -264,7 +270,7 @@ body.dark .project-card a:hover {
 /* ============================= */
 .hire-btn {
   background: #007bff; /* main blue */
-  color: #fff; /* white text for readability */
+  color: #fff; /* white text */
   border: none;
   font-weight: bold;
   border-radius: 8px;
