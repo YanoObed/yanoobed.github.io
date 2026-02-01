@@ -5,14 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obadia Yano | Data Analytics Software Developer</title>
 
-  <!-- ✅ Content Security Policy to block Grammarly and other extension scripts -->
+  <!-- Content Security Policy (UPDATED to allow GTM & GA4) -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self';">
+    content="
+      default-src 'self';
+      img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com;
+      style-src 'self' 'unsafe-inline';
+      script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+      connect-src https://www.google-analytics.com https://region1.google-analytics.com;
+      object-src 'none';
+      frame-ancestors 'none';
+      base-uri 'self';
+    ">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NVBXCJXQ');
+  </script>
+  <!-- End Google Tag Manager -->
 
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
+
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVBXCJXQ"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
     <div class="profile-section">
       <img src="profile.jpg" alt="Obadia Yano" class="profile-pic" />
@@ -32,12 +59,16 @@
   <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p>
-      I’m <strong>Obadia Yano</strong>, a Data Engineer specializing in multi-platform data orchestration and spatial infrastructure.  
-      I design and deploy automated ETL pipelines that synchronize complex datasets across <strong>CRM ecosystems (Salesforce, HubSpot)</strong>, 
-      health information systems <strong>(DHIS 2)</strong>, and field data collection tools <strong>(Ona, KoBoToolbox, SurveyCTO, CommCare, Open Data Kit (ODK))</strong>.  
-      By leveraging Python for API integration, <strong>QGIS</strong> for spatial data modeling, and modern web technologies such as <strong>React/Angular</strong>, <strong>TypeScript</strong>, and <strong>Django</strong>, 
-      I transform fragmented operational data into unified, production-ready systems.  
-      These systems power enterprise-level analytics, interactive dashboards, and strategic decision-making using tools like <strong>Power BI</strong> and <strong>Tableau</strong>.
+      I’m <strong>Obadia Yano</strong>, a Data Engineer specializing in multi-platform data orchestration and spatial infrastructure.
+      I design and deploy automated ETL pipelines that synchronize complex datasets across
+      <strong>CRM ecosystems (Salesforce, HubSpot)</strong>,
+      health information systems <strong>(DHIS 2)</strong>, and field data collection tools
+      <strong>(Ona, KoBoToolbox, SurveyCTO, CommCare, Open Data Kit (ODK))</strong>.
+      By leveraging Python for API integration, <strong>QGIS</strong> for spatial data modeling, and modern web technologies such as
+      <strong>React/Angular</strong>, <strong>TypeScript</strong>, and <strong>Django</strong>,
+      I transform fragmented operational data into unified, production-ready systems.
+      These systems power enterprise-level analytics, interactive dashboards, and strategic decision-making using tools like
+      <strong>Power BI</strong> and <strong>Tableau</strong>.
     </p>
   </section>
 
@@ -61,29 +92,28 @@
       <div class="project-card">
         <h3>PowerBi Financial Performance Dashboard</h3>
         <p>
-          Designed a Power BI dashboard integrating SQL data sources to monitor regional performance KPIs, 
+          Designed a Power BI dashboard integrating SQL data sources to monitor regional performance KPIs,
           increasing reporting efficiency by 40%.
         </p>
-        <a 
-          href="https://app.powerbi.com/view?r=eyJrIjoiMDViYTkyMTAtZGVhYS00NTFlLTgxMmMtYTM2M2E3ZTgzOGQ3IiwidCI6IjBmZjgyZDc5LTZhYmQtNDA0Yi05ZWY2LTY0YjQ0NWRhMGE1NiJ9"
-          target="_blank"
-          rel="noopener noreferrer">
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiMDViYTkyMTAtZGVhYS00NTFlLTgxMmMtYTM2M2E3ZTgzOGQ3IiwidCI6IjBmZjgyZDc5LTZhYmQtNDA0Yi05ZWY2LTY0YjQ0NWRhMGE1NiJ9"
+           target="_blank" rel="noopener noreferrer">
           View Dashboard →
         </a>
-
       </div>
+
       <div class="project-card">
         <h3>Data Automation Script</h3>
         <p>
-          Built a Python-based automation workflow to clean and merge raw Excel data, 
-          Reducing manual reporting time from 3 hours to 15 minutes.
+          Built a Python-based automation workflow to clean and merge raw Excel data,
+          reducing manual reporting time from 3 hours to 15 minutes.
         </p>
         <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
       </div>
+
       <div class="project-card">
         <h3>Machine Learning Forecast App</h3>
         <p>
-          Developed a predictive analytics dashboard using Python and Dash to forecast product demand 
+          Developed a predictive analytics dashboard using Python and Dash to forecast product demand
           for retail businesses.
         </p>
         <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
@@ -94,31 +124,31 @@
   <section id="freelance" class="fade-in">
     <h2>Freelance Services</h2>
     <p>
-      I offer freelance services in <strong>data analytics, software development, and business automation</strong>. 
-      I help clients transform their raw data into clear insights and functional tools. 
-      Whether you need a Power BI dashboard, a data automation pipeline, or a web-based analytics app — I can build it.
+      I offer freelance services in <strong>data analytics, software development, and business automation</strong>.
+      I help clients transform their raw data into clear insights and functional tools.
     </p>
     <ul class="links">
-      <li><a href="https://www.linkedin.com/in/obadia-yano-761025238/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="https://github.com/YanoObed" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="https://www.upwork.com/freelancers/~016cd408593ab0bb49" target="_blank" rel="noopener noreferrer">Upwork</a></li>
-      <li><a href="https://www.fiverr.com/trish_carol" target="_blank" rel="noopener noreferrer">Fiverr</a></li>
+      <li><a href="https://www.linkedin.com/in/obadia-yano-761025238/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/YanoObed" target="_blank">GitHub</a></li>
+      <li><a href="https://www.upwork.com/freelancers/~016cd408593ab0bb49" target="_blank">Upwork</a></li>
+      <li><a href="https://www.fiverr.com/trish_carol" target="_blank">Fiverr</a></li>
     </ul>
   </section>
+
   <section id="contact" class="fade-in">
     <h2>Contact Me</h2>
-    <p>Email me directly: <a href="mailto:obadiayano45@gmail.com">obadiayano45@gmail.com</a></p>
-    <p>Call or WhatsApp me directly: 
+    <p>Email: <a href="mailto:obadiayano45@gmail.com">obadiayano45@gmail.com</a></p>
+    <p>
+      Phone:
       <a href="tel:+254702268762">+254 702 268 762</a> /
       <a href="tel:+254114313841">+254 114 313 841</a>
     </p>
     <a href="https://www.upwork.com/freelancers/~016cd408593ab0bb49" target="_blank" class="hire-btn">💼 Hire Me on Upwork</a>
     <a href="https://www.fiverr.com/trish_carol" target="_blank" class="hire-btn">💼 Hire Me on Fiverr</a>
-    
   </section>
 
   <footer>
-    <p>© 2025 Obadia Yano | Designed and Developed by Obadia Yano (obadiayano45@gmail.com)</p>
+    <p>© 2025 Obadia Yano | Designed and Developed by Obadia Yano</p>
   </footer>
 </body>
 </html>
