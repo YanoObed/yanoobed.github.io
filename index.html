@@ -5,28 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obadia Yano | Data Analytics Software Developer</title>
 
-  <!-- Content Security Policy (UPDATED to allow GTM & GA4) -->
+  <!--
+    Content Security Policy
+    Explicitly allows Google Tag Manager and GA4 while keeping everything else locked down.
+  -->
   <meta http-equiv="Content-Security-Policy"
-  content="
-    default-src 'self';
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
-    img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com;
-    connect-src https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com;
-    style-src 'self' 'unsafe-inline';
-    frame-src https://www.googletagmanager.com;
-    object-src 'none';
-    base-uri 'self';
-    frame-ancestors 'none';
-  ">
+    content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline'
+        https://www.googletagmanager.com
+        https://www.google-analytics.com;
+      img-src 'self' data:
+        https://www.google-analytics.com
+        https://www.googletagmanager.com;
+      connect-src
+        https://www.google-analytics.com
+        https://region1.google-analytics.com
+        https://www.googletagmanager.com;
+      style-src 'self' 'unsafe-inline';
+      frame-src https://www.googletagmanager.com;
+      object-src 'none';
+      base-uri 'self';
+      frame-ancestors 'none';
+    ">
 
-
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager (loads GA4 and other tracking tools) -->
   <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NVBXCJXQ');
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l !== 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NVBXCJXQ');
   </script>
   <!-- End Google Tag Manager -->
 
@@ -35,12 +49,15 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
+  <!-- GTM fallback for users with JavaScript disabled -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVBXCJXQ"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-NVBXCJXQ"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <header>
     <div class="profile-section">
@@ -49,6 +66,7 @@
       <p class="subtitle">Data Analytics Software Developer & Freelance Analyst</p>
       <button id="theme-toggle">🌙 Dark Mode</button>
     </div>
+
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -61,15 +79,20 @@
   <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p>
-      I’m <strong>Obadia Yano</strong>, a Data Engineer specializing in multi-platform data orchestration and spatial infrastructure.
-      I design and deploy automated ETL pipelines that synchronize complex datasets across
-      <strong>CRM ecosystems (Salesforce, HubSpot)</strong>,
-      health information systems <strong>(DHIS 2)</strong>, and field data collection tools
-      <strong>(Ona, KoBoToolbox, SurveyCTO, CommCare, Open Data Kit (ODK))</strong>.
-      By leveraging Python for API integration, <strong>QGIS</strong> for spatial data modeling, and modern web technologies such as
-      <strong>React/Angular</strong>, <strong>TypeScript</strong>, and <strong>Django</strong>,
-      I transform fragmented operational data into unified, production-ready systems.
-      These systems power enterprise-level analytics, interactive dashboards, and strategic decision-making using tools like
+      I’m <strong>Obadia Yano</strong>, a data professional focused on building reliable,
+      end-to-end data systems that support real decision-making.
+      My work centers on automating data flows across
+      <strong>CRMs (Salesforce, HubSpot)</strong>,
+      health information systems such as <strong>DHIS2</strong>,
+      and field data tools including
+      <strong>KoBoToolbox, ODK, CommCare, Ona, and SurveyCTO</strong>.
+    </p>
+    <p>
+      Using Python for API integrations, <strong>QGIS</strong> for spatial analysis,
+      and modern web frameworks like <strong>Django</strong>, <strong>React</strong>,
+      and <strong>TypeScript</strong>,
+      I turn fragmented datasets into production-ready pipelines.
+      These power dashboards and analytics in tools like
       <strong>Power BI</strong> and <strong>Tableau</strong>.
     </p>
   </section>
@@ -77,46 +100,51 @@
   <section id="skills" class="fade-in">
     <h2>Professional Skills</h2>
     <ul class="skills-list">
-      <li>Data Analytics Software Development</li>
+      <li>Data Analytics & Software Development</li>
       <li>Python (Pandas, NumPy, Matplotlib, Dash)</li>
-      <li>SQL & Database Design</li>
-      <li>Power BI & Data Visualization</li>
-      <li>Excel (Advanced Formulas & Automation)</li>
-      <li>Machine Learning & Predictive Modeling</li>
-      <li>API Integration & Data Automation</li>
-      <li>Web Development for Data Visualization</li>
+      <li>SQL & Relational Database Design</li>
+      <li>Power BI & Business Intelligence</li>
+      <li>Advanced Excel & Automation</li>
+      <li>Machine Learning & Forecasting</li>
+      <li>API Integration & Data Pipelines</li>
+      <li>Web-based Data Visualisation</li>
     </ul>
   </section>
 
   <section id="projects" class="fade-in">
     <h2>Featured Projects</h2>
+
     <div class="projects-grid">
       <div class="project-card">
-        <h3>PowerBi Financial Performance Dashboard</h3>
+        <h3>Financial Performance Dashboard (Power BI)</h3>
         <p>
-          Designed a Power BI dashboard integrating SQL data sources to monitor regional performance KPIs,
-          increasing reporting efficiency by 40%.
+          Built a Power BI dashboard connected to SQL data sources
+          to track regional KPIs, improving reporting turnaround time
+          by roughly 40%.
         </p>
-        <a href="https://app.powerbi.com/view?r=eyJrIjoiMDViYTkyMTAtZGVhYS00NTFlLTgxMmMtYTM2M2E3ZTgzOGQ3IiwidCI6IjBmZjgyZDc5LTZhYmQtNDA0Yi05ZWY2LTY0YjQ0NWRhMGE1NiJ9"
-           target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://app.powerbi.com/view?r=eyJrIjoiMDViYTkyMTAtZGVhYS00NTFlLTgxMmMtYTM2M2E3ZTgzOGQ3IiwidCI6IjBmZjgyZDc5LTZhYmQtNDA0Yi05ZWY2LTY0YjQ0NWRhMGE1NiJ9"
+          target="_blank"
+          rel="noopener noreferrer">
           View Dashboard →
         </a>
       </div>
 
       <div class="project-card">
-        <h3>Data Automation Script</h3>
+        <h3>Automated Data Cleaning Workflow</h3>
         <p>
-          Built a Python-based automation workflow to clean and merge raw Excel data,
-          reducing manual reporting time from 3 hours to 15 minutes.
+          Developed a Python workflow to clean, validate,
+          and merge raw Excel files, reducing manual reporting
+          from hours to minutes.
         </p>
         <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
       </div>
 
       <div class="project-card">
-        <h3>Machine Learning Forecast App</h3>
+        <h3>Demand Forecasting App</h3>
         <p>
-          Developed a predictive analytics dashboard using Python and Dash to forecast product demand
-          for retail businesses.
+          Created a lightweight forecasting app using Python and Dash
+          to help small retail teams plan inventory and demand.
         </p>
         <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
       </div>
@@ -126,9 +154,11 @@
   <section id="freelance" class="fade-in">
     <h2>Freelance Services</h2>
     <p>
-      I offer freelance services in <strong>data analytics, software development, and business automation</strong>.
-      I help clients transform their raw data into clear insights and functional tools.
+      I work with individuals and organizations to turn raw data
+      into clear insights, dashboards, and automated tools that
+      support better decisions.
     </p>
+
     <ul class="links">
       <li><a href="https://www.linkedin.com/in/obadia-yano-761025238/" target="_blank">LinkedIn</a></li>
       <li><a href="https://github.com/YanoObed" target="_blank">GitHub</a></li>
@@ -138,19 +168,31 @@
   </section>
 
   <section id="contact" class="fade-in">
-    <h2>Contact Me</h2>
+    <h2>Contact</h2>
     <p>Email: <a href="mailto:obadiayano45@gmail.com">obadiayano45@gmail.com</a></p>
     <p>
       Phone:
       <a href="tel:+254702268762">+254 702 268 762</a> /
       <a href="tel:+254114313841">+254 114 313 841</a>
     </p>
-    <a href="https://www.upwork.com/freelancers/~016cd408593ab0bb49" target="_blank" class="hire-btn">💼 Hire Me on Upwork</a>
-    <a href="https://www.fiverr.com/trish_carol" target="_blank" class="hire-btn">💼 Hire Me on Fiverr</a>
+
+    <a
+      href="https://www.upwork.com/freelancers/~016cd408593ab0bb49"
+      target="_blank"
+      class="hire-btn">
+      💼 Hire Me on Upwork
+    </a>
+
+    <a
+      href="https://www.fiverr.com/trish_carol"
+      target="_blank"
+      class="hire-btn">
+      💼 Hire Me on Fiverr
+    </a>
   </section>
 
   <footer>
-    <p>© 2025 Obadia Yano | Designed and Developed by Obadia Yano</p>
+    <p>© 2025 Obadia Yano | Designed & built by Obadia Yano</p>
   </footer>
 </body>
 </html>
