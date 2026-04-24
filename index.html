@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obadia Yano | Data Analytics Software Developer</title>
+  <meta name="description" content="Obadia Yano — Data Analytics Software Developer & Freelance Analyst. Building end-to-end data pipelines, dashboards, and automation tools." />
 
-  <!--
-    Content Security Policy
-    Explicitly allows Google Tag Manager and GA4 while keeping everything else locked down.
-  -->
   <meta http-equiv="Content-Security-Policy"
     content="
       default-src 'self';
@@ -22,182 +19,996 @@
         https://www.google-analytics.com
         https://region1.google-analytics.com
         https://www.googletagmanager.com;
-      style-src 'self' 'unsafe-inline';
+      style-src 'self' 'unsafe-inline'
+        https://fonts.googleapis.com;
+      font-src https://fonts.gstatic.com;
       frame-src https://www.googletagmanager.com;
       object-src 'none';
       base-uri 'self';
       frame-ancestors 'none';
     ">
 
-  <!-- Google Tag Manager (loads GA4 and other tracking tools) -->
+  <!-- Google Tag Manager -->
   <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l !== 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-NVBXCJXQ');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NVBXCJXQ');
   </script>
-  <!-- End Google Tag Manager -->
 
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & Base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sans: 'Plus Jakarta Sans', sans-serif;
+      --mono: 'Space Mono', monospace;
+      --radius: 14px;
+      --transition: 0.25s ease;
+    }
+
+    [data-theme="dark"] {
+      --bg:           #0f1623;
+      --bg-card:      #16202f;
+      --bg-muted:     #1a2740;
+      --fg:           #e8edf5;
+      --fg-muted:     #8795ab;
+      --border:       #243045;
+      --teal:         #2cbfaa;
+      --copper:       #e07e3c;
+      --nav-bg:       rgba(15,22,35,0.92);
+    }
+
+    [data-theme="light"] {
+      --bg:           #f5f7fa;
+      --bg-card:      #ffffff;
+      --bg-muted:     #edf0f5;
+      --fg:           #111827;
+      --fg-muted:     #5a6a80;
+      --border:       #dde3ec;
+      --teal:         #1a9e8c;
+      --copper:       #c96820;
+      --nav-bg:       rgba(245,247,250,0.95);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Nav ────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      transition: background var(--transition);
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-brand span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--fg-muted);
+      font-family: var(--mono);
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--fg-muted);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--fg); }
+
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+
+    #theme-toggle {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      cursor: pointer;
+      font-size: 1rem;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    #theme-toggle:hover { background: var(--border); }
+
+    /* ── Mobile menu ────────────────────────────── */
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--fg);
+      cursor: pointer;
+      border-radius: 8px;
+      width: 38px; height: 38px;
+      font-size: 1.1rem;
+      align-items: center; justify-content: center;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+      flex-direction: column;
+      padding: 1rem 5%;
+      gap: 0.25rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+      color: var(--fg);
+      transition: background var(--transition);
+    }
+    .mobile-menu a:hover { background: var(--bg-muted); }
+
+    /* ── Container ──────────────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    /* ── Section base ───────────────────────────── */
+    section {
+      padding: 100px 0;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 3rem;
+    }
+
+    /* ── Hero ───────────────────────────────────── */
+    #hero {
+      padding-top: 160px;
+      padding-bottom: 100px;
+      opacity: 1;
+      transform: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(44,191,170,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title .accent { color: var(--teal); }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--fg-muted);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+    }
+    .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--fg);
+    }
+    .btn-outline:hover {
+      border-color: var(--fg-muted);
+      transform: translateY(-2px);
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--fg-muted);
+    }
+    .hero-tag .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+
+    /* ── About ──────────────────────────────────── */
+    #about { background: var(--bg-muted); border-radius: 24px; margin: 0 2%; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .avatar-wrap {
+      position: relative;
+    }
+
+    .avatar-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 20px;
+      border: 2px solid var(--teal);
+      opacity: 0.3;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+    .avatar-wrap:hover::after { opacity: 0.7; }
+
+    .avatar-wrap img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .avatar-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 16px;
+      background: var(--bg-card);
+      border: 2px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--fg-muted);
+      font-size: 0.85rem;
+    }
+    .avatar-placeholder svg { opacity: 0.4; }
+
+    .about-text p {
+      color: var(--fg-muted);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .about-text strong { color: var(--fg); }
+
+    /* ── Skills ─────────────────────────────────── */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .skill-pill:hover {
+      border-color: var(--teal);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(44,191,170,0.12);
+    }
+    .skill-pill .check {
+      width: 18px; height: 18px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .skill-pill .check svg { width: 10px; height: 10px; }
+
+    /* ── Projects ───────────────────────────────── */
+    #projects { background: var(--bg-muted); border-radius: 24px; margin: 0 2%; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+    .project-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 8px 32px rgba(44,191,170,0.1);
+      transform: translateY(-4px);
+    }
+
+    .project-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      color: var(--fg-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--teal);
+      transition: gap var(--transition);
+    }
+    .project-link:hover { gap: 0.5rem; }
+
+    /* ── Freelance ──────────────────────────────── */
+    .freelance-banner {
+      background: linear-gradient(135deg, #0f2740 0%, #0f1a30 100%);
+      border-radius: var(--radius);
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    [data-theme="light"] .freelance-banner {
+      background: linear-gradient(135deg, #1a3a5c 0%, #0f2045 100%);
+    }
+
+    .freelance-banner::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -10%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(44,191,170,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .freelance-banner h2 {
+      color: #fff;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .freelance-banner p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    .platform-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      min-width: 260px;
+    }
+
+    .platform-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.25rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all var(--transition);
+    }
+    .platform-link:hover {
+      transform: translateY(-2px);
+    }
+    .platform-link.linkedin:hover { background: #0A66C2; border-color: #0A66C2; }
+    .platform-link.github:hover  { background: #333; border-color: #333; }
+    .platform-link.upwork:hover  { background: #14A800; border-color: #14A800; }
+    .platform-link.fiverr:hover  { background: #1DBF73; border-color: #1DBF73; }
+
+    /* ── Contact ────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .contact-card .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--fg-muted);
+      font-family: var(--mono);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-card .value {
+      font-weight: 600;
+      font-size: 0.9rem;
+      word-break: break-all;
+    }
+
+    .hire-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hire-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: filter var(--transition), transform var(--transition);
+    }
+    .hire-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+    .hire-btn.upwork { background: #14A800; }
+    .hire-btn.fiverr { background: #1DBF73; }
+
+    /* ── Footer ─────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+    }
+
+    footer .brand { font-weight: 700; color: var(--fg); }
+
+    /* ── Responsive ─────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .avatar-wrap { width: 180px; }
+
+      .freelance-banner {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+      .platform-links { grid-template-columns: 1fr 1fr; min-width: unset; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 500px) {
+      .btn-group { flex-direction: column; }
+      .hire-btns { flex-direction: column; }
+      .hero-tags { gap: 1rem; }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- GTM fallback for users with JavaScript disabled -->
+  <!-- GTM fallback -->
   <noscript>
-    <iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-NVBXCJXQ"
-      height="0"
-      width="0"
-      style="display:none;visibility:hidden">
-    </iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVBXCJXQ"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
-  <header>
-    <div class="profile-section">
-      <img src="profile.jpg" alt="Obadia Yano" class="profile-pic" />
-      <h1>Obadia Yano</h1>
-      <p class="subtitle">Data Analytics Software Developer & Freelance Analyst</p>
-      <button id="theme-toggle">🌙 Dark Mode</button>
+  <!-- ── Navigation ─────────────────────────────── -->
+  <nav>
+    <div class="nav-brand">
+      Obadia Yano
+      <span>Data Analytics · Software Developer</span>
     </div>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#freelance">Freelance</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>
-<p>
-    I’m <strong>Obadia Yano</strong>, a data professional focused on building reliable,
-    end-to-end data systems that support real decision-making.
-    My work centers on automating data flows across
-    CRMs (Salesforce, HubSpot),
-    health information systems such as DHIS2,
-    and field data tools including
-    KoBoToolbox, ODK, CommCare, Ona, and SurveyCTO.
- </p>
- <p>
-    Using Python and Google Apps Script for API integrations and automation,
-    QGIS for spatial analysis,
-    and modern web frameworks like Django, React,
-    and TypeScript,
-    I turn fragmented datasets into production-ready pipelines.
-    These power dashboards and analytics in tools like
-    Power BI and Tableau.
-</p>
-
-    </p>
-  </section>
-
-  <section id="skills" class="fade-in">
-    <h2>Professional Skills</h2>
-    <ul class="skills-list">
-      <li>Data Analytics & Software Development</li>
-      <li>Python (Pandas, NumPy, Matplotlib, Dash)</li>
-      <li>SQL & Relational Database Design</li>
-      <li>Power BI & Business Intelligence</li>
-      <li>Advanced Excel & Automation</li>
-      <li>Machine Learning & Forecasting</li>
-      <li>API Integration & Data Pipelines</li>
-      <li>Web-based Data Visualisation</li>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#freelance">Freelance</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </section>
 
-  <section id="projects" class="fade-in">
-    <h2>Featured Projects</h2>
+    <div class="nav-right">
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
 
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Financial Performance Dashboard (Power BI)</h3>
-        <p>
-          Built a Power BI dashboard connected to SQL data sources
-          to track regional KPIs, improving reporting turnaround time
-          by roughly 40%.
-        </p>
-        <!-- <a
-          href="https://app.powerbi.com/view?r=eyJrIjoiMDViYTkyMTAtZGVhYS00NTFlLTgxMmMtYTM2M2E3ZTgzOGQ3IiwidCI6IjBmZjgyZDc5LTZhYmQtNDA0Yi05ZWY2LTY0YjQ0NWRhMGE1NiJ9"
-          target="_blank"
-          rel="noopener noreferrer">
-          View Dashboard →
-        </a> -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about"     onclick="closeMobileMenu()">About</a>
+    <a href="#skills"    onclick="closeMobileMenu()">Skills</a>
+    <a href="#projects"  onclick="closeMobileMenu()">Projects</a>
+    <a href="#freelance" onclick="closeMobileMenu()">Freelance</a>
+    <a href="#contact"   onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ── Hero ───────────────────────────────────── -->
+  <section id="hero">
+    <div class="container">
+      <p class="hero-eyebrow">Hi, I'm Obadia Yano</p>
+
+      <h1 class="hero-title">
+        I help teams make sense<br>
+        of their data — from raw files<br>
+        to <span class="accent">real decisions.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Data analytics developer and freelance analyst based in Kenya.
+        I build pipelines, dashboards, and automation tools that actually get used.
+      </p>
+
+      <div class="btn-group">
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="#projects" class="btn btn-outline">See My Work</a>
       </div>
 
-      <div class="project-card">
-        <h3>Automated Data Cleaning Workflow</h3>
-        <p>
-          Developed a Python workflow to clean, validate,
-          and merge raw Excel files, reducing manual reporting
-          from hours to minutes.
-        </p>
-        <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Demand Forecasting App</h3>
-        <p>
-          Created a lightweight forecasting app using Python and Dash
-          to help small retail teams plan inventory and demand.
-        </p>
-        <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
+      <div class="hero-tags">
+        <span class="hero-tag">
+          <span class="dot" style="background:var(--teal)"></span>
+          Data Engineering
+        </span>
+        <span class="hero-tag">
+          <span class="dot" style="background:var(--copper)"></span>
+          Analytics
+        </span>
+        <span class="hero-tag">
+          <span class="dot" style="background:#8b7cf6"></span>
+          Automation
+        </span>
+        <span class="hero-tag">
+          <span class="dot" style="background:#3b82f6"></span>
+          Dashboards
+        </span>
       </div>
     </div>
   </section>
 
-  <section id="freelance" class="fade-in">
-    <h2>Freelance Services</h2>
-    <p>
-      I work with individuals and organizations to turn raw data
-      into clear insights, dashboards, and automated tools that
-      support better decisions.
-    </p>
+  <!-- ── About ──────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">About Me</p>
+      <div class="about-grid">
 
-    <ul class="links">
-      <li><a href="https://www.linkedin.com/in/obadia-yano-761025238/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/YanoObed" target="_blank">GitHub</a></li>
-      <li><a href="https://www.upwork.com/freelancers/~016cd408593ab0bb49" target="_blank">Upwork</a></li>
-      <li><a href="https://www.fiverr.com/trish_carol" target="_blank">Fiverr</a></li>
-    </ul>
+        <div class="avatar-wrap">
+          <!-- Replace src with your photo path -->
+          <div class="avatar-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            Add profile.jpg
+          </div>
+          <!--
+            When you have your photo ready, replace the placeholder above with:
+            <img src="profile.jpg" alt="Obadia Yano" />
+          -->
+        </div>
+
+        <div class="about-text">
+          <h2 class="section-title" style="font-size:2rem;margin-bottom:1.5rem">
+            A bit about who I am and what I do
+          </h2>
+
+          <p>
+            I'm <strong>Obadia</strong> — a data professional who enjoys solving the kind
+            of messy, real-world data problems that most people would rather avoid.
+            I've spent years working with organizations to build systems that actually
+            hold up when the data gets complicated.
+          </p>
+          <p>
+            A lot of my work involves connecting the dots between different platforms —
+            CRMs like Salesforce and HubSpot, health systems like DHIS2, and field data
+            tools like KoBoToolbox, ODK, CommCare, Ona, and SurveyCTO. I use
+            <strong>Python</strong> and <strong>Google Apps Script</strong> to automate
+            the tedious parts, and <strong>QGIS</strong> when the data has a geographic dimension.
+          </p>
+          <p>
+            On the development side, I work with Django, React, and TypeScript to build
+            web tools that bring data to life — clean, reliable information that powers
+            <strong>Power BI</strong> and <strong>Tableau</strong> dashboards people
+            actually open every day.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:obadiayano45@gmail.com">obadiayano45@gmail.com</a></p>
-    <p>
-      Phone:
-      <a href="tel:+254702268762">+254 702 268 762</a> /
-      <a href="tel:+254114313841">+254 114 313 841</a>
-    </p>
+  <!-- ── Skills ─────────────────────────────────── -->
+  <section id="skills">
+    <div class="container">
+      <p class="section-label">Professional Skills</p>
+      <h2 class="section-title">What I work with</h2>
 
-    <a
-      href="https://www.upwork.com/freelancers/~016cd408593ab0bb49"
-      target="_blank"
-      class="hire-btn">
-      💼 Hire Me on Upwork
-    </a>
-
-    <a
-      href="https://www.fiverr.com/trish_carol"
-      target="_blank"
-      class="hire-btn">
-      💼 Hire Me on Fiverr
-    </a>
+      <div class="skills-grid">
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Python (Pandas, NumPy, Matplotlib, Dash)
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          SQL & Relational Database Design
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Power BI & Business Intelligence
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Advanced Excel & Automation
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Machine Learning & Forecasting
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          API Integration & Data Pipelines
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Web-based Data Visualisation
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          QGIS & Spatial Analysis
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Django, React & TypeScript
+        </div>
+        <div class="skill-pill">
+          <span class="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Google Apps Script & Automation
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- ── Projects ───────────────────────────────── -->
+  <section id="projects">
+    <div class="container">
+      <p class="section-label">Work I've Done</p>
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-icon" style="background:rgba(59,130,246,0.12);color:#3b82f6">📊</div>
+          <h3>Financial Performance Dashboard (Power BI)</h3>
+          <p>
+            Built a Power BI dashboard connected to SQL data sources to track
+            regional KPIs, improving reporting turnaround time by roughly 40%.
+          </p>
+          <span style="font-size:0.85rem;color:var(--fg-muted);font-style:italic">Internal project</span>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon" style="background:rgba(44,191,170,0.12);color:var(--teal)">⚙️</div>
+          <h3>Automated Data Cleaning Workflow</h3>
+          <p>
+            Developed a Python workflow to clean, validate, and merge raw Excel files,
+            reducing manual reporting from hours to minutes.
+          </p>
+          <a href="https://github.com/YanoObed" target="_blank" rel="noopener noreferrer" class="project-link">
+            View on GitHub →
+          </a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon" style="background:rgba(224,126,60,0.12);color:var(--copper)">📈</div>
+          <h3>Demand Forecasting App</h3>
+          <p>
+            Created a lightweight forecasting app using Python and Dash to help
+            small retail teams plan inventory and demand.
+          </p>
+          <a href="https://github.com/YanoObed" target="_blank" rel="noopener noreferrer" class="project-link">
+            View on GitHub →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Freelance ──────────────────────────────── -->
+  <section id="freelance">
+    <div class="container">
+      <div class="freelance-banner">
+        <div>
+          <p style="color:var(--teal);font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem">
+            Independent Consulting
+          </p>
+          <h2>Freelance Services</h2>
+          <p style="margin-top:0.75rem">
+            I work with individuals and organizations to turn raw data into clear insights,
+            dashboards, and automated tools that support better decisions.
+          </p>
+        </div>
+
+        <div class="platform-links">
+          <a class="platform-link linkedin"
+             href="https://www.linkedin.com/in/obadia-yano-761025238/"
+             target="_blank" rel="noopener noreferrer">
+            in LinkedIn
+          </a>
+          <a class="platform-link github"
+             href="https://github.com/YanoObed"
+             target="_blank" rel="noopener noreferrer">
+            ⌥ GitHub
+          </a>
+          <a class="platform-link upwork"
+             href="https://www.upwork.com/freelancers/~016cd408593ab0bb49"
+             target="_blank" rel="noopener noreferrer">
+            💼 Upwork
+          </a>
+          <a class="platform-link fiverr"
+             href="https://www.fiverr.com/trish_carol"
+             target="_blank" rel="noopener noreferrer">
+            ★ Fiverr
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's talk</h2>
+      <p style="color:var(--fg-muted);font-size:1.05rem;max-width:520px;margin-bottom:2.5rem;line-height:1.7">
+        Whether you have a project in mind, need help with your data, or just want to connect —
+        feel free to reach out. I'm usually quick to respond.
+      </p>
+
+      <div class="contact-grid">
+
+        <a href="mailto:obadiayano45@gmail.com" class="contact-card" style="border-color:var(--border)">
+          <div class="contact-icon" style="background:rgba(44,191,170,0.12)">📧</div>
+          <p class="label">Email</p>
+          <p class="value" style="color:var(--teal)">obadiayano45@gmail.com</p>
+        </a>
+
+        <a href="https://www.linkedin.com/in/obadia-yano-761025238/"
+           target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon" style="background:rgba(10,102,194,0.12)">in</div>
+          <p class="label">LinkedIn</p>
+          <p class="value">Obadia Yano ↗</p>
+        </a>
+
+        <div class="contact-card" style="cursor:default">
+          <div class="contact-icon" style="background:rgba(224,126,60,0.12)">📱</div>
+          <p class="label">Phone</p>
+          <div style="display:flex;flex-direction:column;gap:0.25rem">
+            <a href="tel:+254702268762" style="color:var(--fg);font-weight:600;font-size:0.9rem;hover:color:var(--teal)">+254 702 268 762</a>
+            <a href="tel:+254114313841" style="color:var(--fg);font-weight:600;font-size:0.9rem">+254 114 313 841</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hire-btns">
+        <a href="https://www.upwork.com/freelancers/~016cd408593ab0bb49"
+           target="_blank" rel="noopener noreferrer" class="hire-btn upwork">
+          💼 Hire Me on Upwork
+        </a>
+        <a href="https://www.fiverr.com/trish_carol"
+           target="_blank" rel="noopener noreferrer" class="hire-btn fiverr">
+          ★ Hire Me on Fiverr
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────── -->
   <footer>
-    <p>© 2025 Obadia Yano | Designed & built by Obadia Yano</p>
+    <span class="brand">Obadia Yano</span>
+    <span>© 2025 Obadia Yano | Designed & built by Obadia Yano</span>
   </footer>
+
+  <!-- ── Scripts ────────────────────────────────── -->
+  <script>
+    /* Dark / Light toggle */
+    const toggleBtn  = document.getElementById('theme-toggle');
+    const html       = document.documentElement;
+
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+
+    const saved = localStorage.getItem('theme') || 'dark';
+    applyTheme(saved);
+
+    toggleBtn.addEventListener('click', () => {
+      applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    /* Mobile menu */
+    const hamburger   = document.getElementById('hamburger');
+    const mobileMenu  = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.textContent = open ? '✕' : '☰';
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.textContent = '☰';
+    }
+
+    /* Scroll reveal */
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('section:not(#hero)').forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>
-
