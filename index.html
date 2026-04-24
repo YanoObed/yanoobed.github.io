@@ -203,16 +203,17 @@
     }
 
     .section-label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+  
+    /* cleaner spacing, no flex needed anymore */
+    display: block;
+    position: relative;
+  }
     .section-label::before {
       content: '';
       display: block;
