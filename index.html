@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obadia Yano | Data Analytics Software Developer</title>
-  <meta name="description" content="Obadia Yano — Data Analytics Software Developer & Freelance Analyst. Building end-to-end data pipelines, dashboards, and automation tools." />
 
+  <!--
+    Content Security Policy
+    Explicitly allows Google Tag Manager and GA4 while keeping everything else locked down.
+  -->
   <meta http-equiv="Content-Security-Policy"
     content="
       default-src 'self';
@@ -19,194 +22,185 @@
         https://www.google-analytics.com
         https://region1.google-analytics.com
         https://www.googletagmanager.com;
-      style-src 'self' 'unsafe-inline'
-        https://fonts.googleapis.com;
-      font-src https://fonts.gstatic.com;
+      style-src 'self' 'unsafe-inline';
       frame-src https://www.googletagmanager.com;
       object-src 'none';
       base-uri 'self';
       frame-ancestors 'none';
     ">
 
+  <!-- Google Tag Manager (loads GA4 and other tracking tools) -->
   <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NVBXCJXQ');
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l !== 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NVBXCJXQ');
   </script>
+  <!-- End Google Tag Manager -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* (your original CSS unchanged — kept intact) */
-    /* ── Reset & Base ─────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --sans: 'Plus Jakarta Sans', sans-serif;
-      --mono: 'Space Mono', monospace;
-      --radius: 14px;
-      --transition: 0.25s ease;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0f1623;
-      --bg-card: #16202f;
-      --bg-muted: #1a2740;
-      --fg: #e8edf5;
-      --fg-muted: #8795ab;
-      --border: #243045;
-      --teal: #2cbfaa;
-      --copper: #e07e3c;
-      --nav-bg: rgba(15,22,35,0.92);
-    }
-
-    [data-theme="light"] {
-      --bg: #f5f7fa;
-      --bg-card: #ffffff;
-      --bg-muted: #edf0f5;
-      --fg: #111827;
-      --fg-muted: #5a6a80;
-      --border: #dde3ec;
-      --teal: #1a9e8c;
-      --copper: #c96820;
-      --nav-bg: rgba(245,247,250,0.95);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.7;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    /* KEEP ALL YOUR ORIGINAL CSS HERE (UNCHANGED) */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .avatar-wrap img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 16px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <!-- GTM fallback for users with JavaScript disabled -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-NVBXCJXQ"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
 
-<!-- NAV (unchanged) -->
-<nav>
-  <div class="nav-brand">
-    Obadia Yano
-    <span>Data Analytics · Software Developer</span>
-  </div>
-
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#freelance">Freelance</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-
-  <div class="nav-right">
-    <button id="theme-toggle">🌙</button>
-    <button class="hamburger" id="hamburger">☰</button>
-  </div>
-</nav>
-
-<!-- HERO (unchanged) -->
-<section id="hero">
-  <div class="container">
-    <h1 class="hero-title">
-      I turn messy data into clear insights<br>
-      that help teams make better decisions.
-    </h1>
-  </div>
-</section>
-
-<!-- ✅ FIXED ABOUT SECTION -->
-<section id="about">
-  <div class="container">
-    <p class="section-label">About Me</p>
-
-    <div class="about-grid">
-
-      <!-- LEFT IMAGE -->
-      <div class="avatar-wrap">
-        <img src="profile.jpg" alt="Obadia Yano">
-      </div>
-
-      <!-- RIGHT TEXT -->
-      <div class="about-text">
-
-        <h2 class="section-title" style="font-size:2rem;margin-bottom:1.5rem">
-          A bit about who I am and what I do
-        </h2>
-
-        <p>
-          I'm <strong>Obadia</strong> — a data professional who enjoys solving messy,
-          real-world data problems that most people avoid. I build systems that stay
-          reliable even when data becomes complex.
-        </p>
-
-        <p>
-          I work across CRMs like Salesforce and HubSpot, health systems like DHIS2,
-          and field tools like KoBoToolbox, ODK, CommCare, Ona, and SurveyCTO.
-          I use Python and Google Apps Script for automation and QGIS for spatial data.
-        </p>
-
-        <p>
-          On the development side, I use Django, React, and TypeScript to build tools
-          that power Power BI and Tableau dashboards used for real decision-making.
-        </p>
-
-      </div>
-
+  <header>
+    <div class="profile-section">
+      <img src="profile.jpg" alt="Obadia Yano" class="profile-pic" />
+      <h1>Obadia Yano</h1>
+      <p class="subtitle">Data Analytics Software Developer & Freelance Analyst</p>
+      <button id="theme-toggle">🌙 Dark Mode</button>
     </div>
-  </div>
-</section>
 
-<!-- SKILLS / PROJECTS / FREELANCE / CONTACT -->
-<!-- (UNCHANGED — kept exactly as your original file) -->
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#freelance">Freelance</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<!-- FOOTER -->
-<footer>
-  <span class="brand">Obadia Yano</span>
-  <span>© 2025 Obadia Yano</span>
-</footer>
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>
+<p>
+    I’m <strong>Obadia Yano</strong>, a data professional focused on building reliable,
+    end-to-end data systems that support real decision-making.
+    My work centers on automating data flows across
+    CRMs (Salesforce, HubSpot),
+    health information systems such as DHIS2,
+    and field data tools including
+    KoBoToolbox, ODK, CommCare, Ona, and SurveyCTO.
+ </p>
+ <p>
+    Using Python and Google Apps Script for API integrations and automation,
+    QGIS for spatial analysis,
+    and modern web frameworks like Django, React,
+    and TypeScript,
+    I turn fragmented datasets into production-ready pipelines.
+    These power dashboards and analytics in tools like
+    Power BI and Tableau.
+</p>
 
-<!-- SCRIPTS (UNCHANGED) -->
-<script>
-  const toggleBtn = document.getElementById('theme-toggle');
-  const html = document.documentElement;
+    </p>
+  </section>
 
-  function applyTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
-    localStorage.setItem('theme', theme);
-  }
+  <section id="skills" class="fade-in">
+    <h2>Professional Skills</h2>
+    <ul class="skills-list">
+      <li>Data Analytics & Software Development</li>
+      <li>Python (Pandas, NumPy, Matplotlib, Dash)</li>
+      <li>SQL & Relational Database Design</li>
+      <li>Power BI & Business Intelligence</li>
+      <li>Advanced Excel & Automation</li>
+      <li>Machine Learning & Forecasting</li>
+      <li>API Integration & Data Pipelines</li>
+      <li>Web-based Data Visualisation</li>
+    </ul>
+  </section>
 
-  applyTheme(localStorage.getItem('theme') || 'dark');
+  <section id="projects" class="fade-in">
+    <h2>Featured Projects</h2>
 
-  toggleBtn.addEventListener('click', () => {
-    applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-  });
-</script>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Financial Performance Dashboard (Power BI)</h3>
+        <p>
+          Built a Power BI dashboard connected to SQL data sources
+          to track regional KPIs, improving reporting turnaround time
+          by roughly 40%.
+        </p>
+        <a
+          <!-- href="https://app.powerbi.com/view?r=eyJrIjoiMDViYTkyMTAtZGVhYS00NTFlLTgxMmMtYTM2M2E3ZTgzOGQ3IiwidCI6IjBmZjgyZDc5LTZhYmQtNDA0Yi05ZWY2LTY0YjQ0NWRhMGE1NiJ9" -->
+        <!-- <a
+          href="https://app.powerbi.com/view?r=eyJrIjoiMDViYTkyMTAtZGVhYS00NTFlLTgxMmMtYTM2M2E3ZTgzOGQ3IiwidCI6IjBmZjgyZDc5LTZhYmQtNDA0Yi05ZWY2LTY0YjQ0NWRhMGE1NiJ9"
+          target="_blank"
+          rel="noopener noreferrer">
+          View Dashboard →
+        </a>
+        </a> -->
+      </div>
 
+      <div class="project-card">
+        <h3>Automated Data Cleaning Workflow</h3>
+        <p>
+          Developed a Python workflow to clean, validate,
+          and merge raw Excel files, reducing manual reporting
+          from hours to minutes.
+        </p>
+        <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Demand Forecasting App</h3>
+        <p>
+          Created a lightweight forecasting app using Python and Dash
+          to help small retail teams plan inventory and demand.
+        </p>
+        <a href="https://github.com/YanoObed" target="_blank">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="freelance" class="fade-in">
+    <h2>Freelance Services</h2>
+    <p>
+      I work with individuals and organizations to turn raw data
+      into clear insights, dashboards, and automated tools that
+      support better decisions.
+    </p>
+
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/obadia-yano-761025238/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/YanoObed" target="_blank">GitHub</a></li>
+      <li><a href="https://www.upwork.com/freelancers/~016cd408593ab0bb49" target="_blank">Upwork</a></li>
+      <li><a href="https://www.fiverr.com/trish_carol" target="_blank">Fiverr</a></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:obadiayano45@gmail.com">obadiayano45@gmail.com</a></p>
+    <p>
+      Phone:
+      <a href="tel:+254702268762">+254 702 268 762</a> /
+      <a href="tel:+254114313841">+254 114 313 841</a>
+    </p>
+
+    <a
+      href="https://www.upwork.com/freelancers/~016cd408593ab0bb49"
+      target="_blank"
+      class="hire-btn">
+      💼 Hire Me on Upwork
+    </a>
+
+    <a
+      href="https://www.fiverr.com/trish_carol"
+      target="_blank"
+      class="hire-btn">
+      💼 Hire Me on Fiverr
+    </a>
+  </section>
+
+  <footer>
+    <p>© 2025 Obadia Yano | Designed & built by Obadia Yano</p>
+  </footer>
 </body>
 </html>
+~
