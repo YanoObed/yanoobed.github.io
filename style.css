@@ -291,3 +291,40 @@ body.dark .hire-btn:hover {
   color: #0a192f;
 }
 
+.community-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.community-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.community-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.community-card h3 {
+  margin-bottom: 10px;
+}
+
+.community-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #6b4f4f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.community-card a:hover {
+  text-decoration: underline;
+}
