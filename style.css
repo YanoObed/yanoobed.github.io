@@ -504,3 +504,128 @@ body.dark .community-card {
   transform: scale(1.08);
   background: linear-gradient(135deg, #fff, #64ffda);
 }
+```css id="zyjlnx"
+/* ============================= */
+/* MODERN PORTFOLIO UPGRADE */
+/* ============================= */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better body rendering */
+body {
+  overflow-x: hidden;
+}
+
+/* Better typography */
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Hero Improvements */
+.hero-header {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Better Cards */
+.gallery-card,
+.community-card,
+.project-card {
+  backdrop-filter: blur(10px);
+}
+
+/* Gallery Card Layout */
+.gallery-card {
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Better Button Hover */
+.gallery-card a,
+.community-card a,
+.project-card a,
+.hire-btn {
+  box-shadow: 0 8px 18px rgba(100,255,218,0.15);
+}
+
+/* More premium hover */
+.gallery-card:hover,
+.community-card:hover,
+.project-card:hover {
+  border: 1px solid rgba(100,255,218,0.25);
+}
+
+/* Better Lists */
+.gallery-card ul,
+.community-card ul {
+  margin-top: 15px;
+}
+
+.gallery-card li,
+.community-card li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Profile image upgrade */
+.profile-pic {
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(100,255,218,0.2);
+}
+
+/* Better spacing */
+.gallery-section,
+.community-section {
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* Cleaner headings */
+h1, h2, h3 {
+  letter-spacing: 0.3px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .gallery-grid,
+  .community-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card {
+    min-height: auto;
+  }
+
+}
+```
