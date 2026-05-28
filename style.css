@@ -87,8 +87,8 @@ nav a:hover {
 
 /* Sections */
 section {
-  max-width: 900px;
-  margin: 2rem auto;
+  width: 100%;
+  margin: 0 auto;
   padding: 1rem;
 }
 
