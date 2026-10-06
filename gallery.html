@@ -1,25 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Gallery | Obadia Yano</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- GOOGLE ANALYTICS 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSNEDB2VZB"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-GSNEDB2VZB', {
+      send_page_view: true
+    });
+  </script>
+
 </head>
 
 <body>
 
 <header>
+
   <h1>My Portfolio Gallery</h1>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-    <a href="community.html">Community</a>
-    <a href="index.html#contact">Contact</a>
+
+    <a
+      href="index.html"
+      data-event="nav_click"
+      data-page="Home">
+      Home
+    </a>
+
+    <a
+      href="gallery.html"
+      data-event="nav_click"
+      data-page="Gallery">
+      Gallery
+    </a>
+
+    <a
+      href="about.html"
+      data-event="nav_click"
+      data-page="About">
+      About
+    </a>
+
+    <a
+      href="community.html"
+      data-event="nav_click"
+      data-page="Community">
+      Community
+    </a>
+
+    <a
+      href="about.html#contact"
+      data-event="nav_click"
+      data-page="Contact">
+      Contact
+    </a>
+
   </nav>
+
 </header>
+
 
 <section class="community-section">
 
@@ -32,7 +88,9 @@
 
   <div class="community-grid">
 
+
     <!-- CARD 1 -->
+
     <div class="community-card">
 
       <h3>📊 Power BI Dashboard</h3>
@@ -45,13 +103,17 @@
       <a
         href="https://app.powerbi.com/view?r=eyJrIjoiY2MwZDEwYTEtOTkzZS00OGFmLTkzYmYtMjY3MTYzOTBmNGZkIiwidCI6IjBmZjgyZDc5LTZhYmQtNDA0Yi05ZWY2LTY0YjQ0NWRhMGE1NiJ9&pageName=ecc4593bc2b9614a6ef8"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+        data-event="project_click"
+        data-project="Power BI Dashboard">
         Open Dashboard →
       </a>
 
     </div>
 
+
     <!-- CARD 2 -->
+
     <div class="community-card">
 
       <h3>💻 Asset Management System</h3>
@@ -64,13 +126,17 @@
       <a
         href="https://asset-manager--trishctz.replit.app/"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+        data-event="project_click"
+        data-project="Asset Management System">
         Launch App →
       </a>
 
     </div>
 
+
     <!-- CARD 3 -->
+
     <div class="community-card">
 
       <h3>📄 Research & Reports</h3>
@@ -82,7 +148,9 @@
 
       <a
         href="documents/report1.pdf"
-        target="_blank">
+        target="_blank"
+        data-event="document_click"
+        data-document="Research Reports">
         View Reports →
       </a>
 
@@ -92,9 +160,68 @@
 
 </section>
 
+
 <footer>
-  <p>© 2026 Obadia Yano | Data Analytics & Software Development</p>
+
+  <p>
+    © 2026 Obadia Yano | Data Analytics & Software Development
+  </p>
+
 </footer>
+
+
+<!-- GOOGLE ANALYTICS CLICK TRACKING -->
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll("[data-event]").forEach(function (element) {
+
+      element.addEventListener("click", function () {
+
+        const eventName = element.dataset.event;
+
+        const eventData = {};
+
+
+        if (element.dataset.page) {
+          eventData.page_name = element.dataset.page;
+        }
+
+
+        if (element.dataset.project) {
+          eventData.project_name = element.dataset.project;
+        }
+
+
+        if (element.dataset.document) {
+          eventData.document_name = element.dataset.document;
+        }
+
+
+        if (element.href) {
+          eventData.link_url = element.href;
+        }
+
+
+        if (typeof gtag === "function") {
+
+          gtag(
+            "event",
+            eventName,
+            eventData
+          );
+
+        }
+
+      });
+
+    });
+
+  });
+
+</script>
 
 </body>
 </html>
