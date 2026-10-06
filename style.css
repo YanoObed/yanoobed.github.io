@@ -199,24 +199,23 @@ h3 {
    ========================================= */
 
 .hero {
-  max-width: 850px;
-  margin: 3rem auto;
-  padding: 3rem 2rem;
-  text-align: center;
-  background: var(--surface-color);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1.3rem;
+  font-size: 1.9rem;
+  margin-bottom: 1.2rem;
 }
 
 .hero p {
-  max-width: 720px;
-  margin: 0.8rem auto;
+  max-width: 800px;
+  margin: 0 0 1rem 0;
   color: var(--muted-text);
   font-size: 1.05rem;
   line-height: 1.8;
@@ -224,6 +223,10 @@ h3 {
 
 body.dark .hero p {
   color: var(--muted-text);
+}
+
+.hero .btn {
+  margin-top: 0.5rem;
 }
 
 
@@ -325,13 +328,15 @@ body.dark .project-card h3 {
   margin-bottom: 0.5rem;
 }
 
-.project-card a {
+
+/* Keep normal project links separate from button links */
+.project-card a:not(.btn) {
   color: var(--button-blue);
   font-weight: 600;
   text-decoration: none;
 }
 
-.project-card a:hover {
+.project-card a:not(.btn):hover {
   color: var(--button-blue-hover);
   text-decoration: underline;
 }
@@ -659,8 +664,10 @@ footer {
   }
 
   .hero {
-    margin: 2rem 0.75rem;
-    padding: 2rem 1.2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: left;
   }
 
   .hero h2 {
@@ -668,6 +675,7 @@ footer {
   }
 
   .hero p {
+    max-width: 100%;
     font-size: 1rem;
     line-height: 1.7;
   }
