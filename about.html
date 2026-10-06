@@ -1,29 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-    content="About Obadia Yano, a Data Analytics Software Developer working across data analytics, software development, application development, data engineering, automation, forecasting, and spatial analysis.">
+  <meta
+    name="description"
+    content="About Obadia Yano, a Data Analytics Software Developer working across data analytics, software development, application development, data engineering, automation, forecasting, and spatial analysis."
+  >
 
   <title>About | Obadia Yano</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- GOOGLE ANALYTICS 4 -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSNEDB2VZB"></script>
+
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-GSNEDB2VZB', {
+      send_page_view: true
+    });
+
+  </script>
+
 </head>
 
 <body>
 
+
 <header>
+
   <h1>About Me</h1>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-    <a href="community.html">Community</a>
-    <a href="#contact">Contact</a>
+
+    <a
+      href="index.html"
+      data-event="nav_click"
+      data-page="Home">
+      Home
+    </a>
+
+    <a
+      href="gallery.html"
+      data-event="nav_click"
+      data-page="Gallery">
+      Gallery
+    </a>
+
+    <a
+      href="about.html"
+      data-event="nav_click"
+      data-page="About">
+      About
+    </a>
+
+    <a
+      href="community.html"
+      data-event="nav_click"
+      data-page="Community">
+      Community
+    </a>
+
+    <a
+      href="#contact"
+      data-event="nav_click"
+      data-page="Contact">
+      Contact
+    </a>
+
   </nav>
+
 </header>
 
 
@@ -69,27 +128,16 @@
   <ul class="skills-list">
 
     <li>Data Analytics</li>
-
     <li>Software Development</li>
-
     <li>Application Development</li>
-
     <li>Data Engineering</li>
-
     <li>Business Intelligence</li>
-
     <li>Data Visualization</li>
-
     <li>Data Pipelines</li>
-
     <li>API Integration</li>
-
     <li>Automation</li>
-
     <li>Machine Learning</li>
-
     <li>Forecasting</li>
-
     <li>Spatial Analysis</li>
 
   </ul>
@@ -141,26 +189,47 @@
     feel free to get in touch.
   </p>
 
+
   <p>
+
     <strong>Email:</strong>
-    <a href="mailto:obadiayano45@gmail.com">
+
+    <a
+      href="mailto:obadiayano45@gmail.com"
+      data-event="email_click">
       obadiayano45@gmail.com
     </a>
+
   </p>
 
+
   <p>
+
     <strong>Phone:</strong>
-    <a href="tel:+254702268762">
+
+    <a
+      href="tel:+254702268762"
+      data-event="phone_click"
+      data-phone="Primary">
       +254 702 268 762
     </a>
+
   </p>
 
+
   <p>
+
     <strong>Phone:</strong>
-    <a href="tel:+254114313841">
+
+    <a
+      href="tel:+254114313841"
+      data-event="phone_click"
+      data-phone="Secondary">
       +254 114 313 841
     </a>
+
   </p>
+
 
   <div class="contact-links">
 
@@ -169,13 +238,15 @@
       target="_blank"
       rel="noopener noreferrer"
       class="whatsapp-btn"
-      aria-label="Contact me on WhatsApp">
+      aria-label="Contact me on WhatsApp"
+      data-event="whatsapp_click">
 
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true">
 
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374a9.87 9.87 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.001 5.122 1.03 6.986 2.896a9.825 9.825 0 012.893 6.994c-.002 5.45-4.437 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.158 11.892c0 2.096.547 4.142 1.588 5.946L.057 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.478-8.413"/>
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.198-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374a9.87 9.87 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.001 5.122 1.03 6.986 2.896a9.825 9.825 0 012.893 6.994c-.002 5.45-4.437 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.158 11.892c0 2.096.547 4.142 1.588 5.946L.057 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.478-8.413"/>
+
       </svg>
 
       <span>WhatsApp</span>
@@ -187,13 +258,62 @@
 </section>
 
 
-<!-- =========================================
-     FOOTER
-     ========================================= -->
-
 <footer>
-  <p>© 2026 Obadia Yano | Data Analytics & Software Development</p>
+
+  <p>
+    © 2026 Obadia Yano | Data Analytics & Software Development
+  </p>
+
 </footer>
+
+
+<!-- GOOGLE ANALYTICS CLICK TRACKING -->
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll("[data-event]").forEach(function (element) {
+
+      element.addEventListener("click", function () {
+
+        const eventName = element.dataset.event;
+
+        const eventData = {};
+
+
+        if (element.dataset.page) {
+          eventData.page_name = element.dataset.page;
+        }
+
+
+        if (element.dataset.phone) {
+          eventData.phone_type = element.dataset.phone;
+        }
+
+
+        if (element.href) {
+          eventData.link_url = element.href;
+        }
+
+
+        if (typeof gtag === "function") {
+
+          gtag(
+            "event",
+            eventName,
+            eventData
+          );
+
+        }
+
+      });
+
+    });
+
+  });
+
+</script>
 
 </body>
 </html>
