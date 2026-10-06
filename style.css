@@ -468,3 +468,39 @@ body.dark .community-card {
   }
 
 }
+
+/* =========================================
+   WHATSAPP CONTACT BUTTON
+   ========================================= */
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+
+  background: #25D366;
+  color: #fff;
+
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.whatsapp-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
