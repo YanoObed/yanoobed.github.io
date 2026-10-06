@@ -1,25 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Community | Obadia Yano</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- GOOGLE ANALYTICS 4 -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSNEDB2VZB"></script>
+
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-GSNEDB2VZB', {
+      send_page_view: true
+    });
+
+  </script>
+
 </head>
 
 <body>
 
+
 <header>
+
   <h1>Community</h1>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-    <a href="community.html">Community</a>
-    <a href="index.html#contact">Contact</a>
+
+    <a
+      href="index.html"
+      data-event="nav_click"
+      data-page="Home">
+      Home
+    </a>
+
+    <a
+      href="gallery.html"
+      data-event="nav_click"
+      data-page="Gallery">
+      Gallery
+    </a>
+
+    <a
+      href="about.html"
+      data-event="nav_click"
+      data-page="About">
+      About
+    </a>
+
+    <a
+      href="community.html"
+      data-event="nav_click"
+      data-page="Community">
+      Community
+    </a>
+
+    <a
+      href="about.html#contact"
+      data-event="nav_click"
+      data-page="Contact">
+      Contact
+    </a>
+
   </nav>
+
 </header>
+
 
 <section class="community-section">
 
@@ -30,9 +90,14 @@
     data, analytics, and technology.
   </p>
 
+
   <div class="community-grid">
 
-    <!-- Kaggle Competition -->
+
+    <!-- =========================================
+         KAGGLE COMPETITION
+         ========================================= -->
+
     <div class="community-card">
 
       <h3>🧠 Kaggle Competition</h3>
@@ -54,13 +119,20 @@
       <a
         href="https://www.kaggle.com/c/rogii-wellbore-geology-prediction?utm_medium=email&utm_source=gamma&utm_campaign=comp-rogii-2026"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+        data-event="community_event_click"
+        data-event-name="Kaggle Competition"
+        data-platform="Kaggle">
         Join Competition →
       </a>
 
     </div>
 
-    <!-- German Stata Conference -->
+
+    <!-- =========================================
+         GERMAN STATA CONFERENCE
+         ========================================= -->
+
     <div class="community-card">
 
       <h3>📊 German Stata Conference 2026</h3>
@@ -75,10 +147,21 @@
       </p>
 
       <ul>
+
         <li>Keynote sessions from leading researchers</li>
-        <li>Advanced statistical methods & real-world case studies</li>
-        <li>Networking with global Stata users</li>
-        <li>Optional hands-on visualization workshop (June 18)</li>
+
+        <li>
+          Advanced statistical methods & real-world case studies
+        </li>
+
+        <li>
+          Networking with global Stata users
+        </li>
+
+        <li>
+          Optional hands-on visualization workshop (June 18)
+        </li>
+
       </ul>
 
       <p>
@@ -89,7 +172,10 @@
       <a
         href="https://dpc-software.de/2026-german-stata-conference/"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+        data-event="community_event_click"
+        data-event-name="German Stata Conference 2026"
+        data-platform="Stata">
         View Conference Details →
       </a>
 
@@ -99,9 +185,90 @@
 
 </section>
 
+
 <footer>
-  <p>© 2026 Obadia Yano | Data Analytics & Software Development</p>
+
+  <p>
+    © 2026 Obadia Yano | Data Analytics & Software Development
+  </p>
+
 </footer>
+
+
+<!-- GOOGLE ANALYTICS CLICK TRACKING -->
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll("[data-event]").forEach(function (element) {
+
+      element.addEventListener("click", function () {
+
+        const eventName = element.dataset.event;
+
+        const eventData = {};
+
+
+        /* Navigation */
+
+        if (element.dataset.page) {
+
+          eventData.page_name =
+            element.dataset.page;
+
+        }
+
+
+        /* Community event */
+
+        if (element.dataset.eventName) {
+
+          eventData.event_name =
+            element.dataset.eventName;
+
+        }
+
+
+        /* Platform */
+
+        if (element.dataset.platform) {
+
+          eventData.platform =
+            element.dataset.platform;
+
+        }
+
+
+        /* Destination */
+
+        if (element.href) {
+
+          eventData.link_url =
+            element.href;
+
+        }
+
+
+        /* Send to GA4 */
+
+        if (typeof gtag === "function") {
+
+          gtag(
+            "event",
+            eventName,
+            eventData
+          );
+
+        }
+
+      });
+
+    });
+
+  });
+
+</script>
 
 </body>
 </html>
