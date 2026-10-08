@@ -610,120 +610,21 @@ body.dark .community-card {
   flex-shrink: 0;
 }
 
-
 /* =========================================
-   FOOTER
+   PROFESSIONAL PROFILE BUTTONS
    ========================================= */
-
-footer {
-  text-align: center;
-  background: var(--header-bg);
-  color: #fff;
-  padding: 1.2rem 1rem;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-}
-
-
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
-
-@media (max-width: 600px) {
-
-  header {
-    padding: 2rem 1rem 1.5rem;
-  }
-
-  .profile-pic {
-    width: 105px;
-    height: 105px;
-  }
-
-  .profile-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-  }
-
-  nav {
-    margin-top: 1.4rem;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 0.35rem 0.45rem;
-    font-size: 0.9rem;
-  }
-
-  section {
-    margin: 2rem auto;
-    padding: 1rem;
-  }
-
-  .hero {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem;
-    text-align: left;
-  }
-
-  .hero h2 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    max-width: 100%;
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .skills-list {
-    grid-template-columns: 1fr;
-  }
-
-  .projects,
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .floating-socials {
-    right: 15px;
-    bottom: 15px;
-    gap: 10px;
-  }
-
-  .floating-socials a {
-    width: 45px;
-    height: 45px;
-    font-size: 21px;
-  }
-
-}
-
-/* =========================================
-   PROFESSIONAL PROFILE ICONS
-   ========================================= */
-
-.professional-profiles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
 
 .social-profile {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  background: var(--header-bg);
+  gap: 7px;
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
   color: #fff;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
   transition:
     transform 0.2s ease,
     background 0.3s ease,
@@ -731,28 +632,44 @@ footer {
 }
 
 .social-profile svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
   flex-shrink: 0;
 }
 
-.social-profile:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+/* LinkedIn */
+.social-profile.linkedin {
+  background: #0a66c2;
 }
 
 .social-profile.linkedin:hover {
-  background: #0a66c2;
+  background: #084f96;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(10, 102, 194, 0.25);
+}
+
+/* GitHub */
+.social-profile.github {
+  background: #24292f;
 }
 
 .social-profile.github:hover {
-  background: #333;
+  background: #171a1d;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(36, 41, 47, 0.25);
 }
 
-body.dark .social-profile {
-  background: #112240;
+/* Upwork */
+.social-profile.upwork {
+  background: #14a800;
+}
+
+.social-profile.upwork:hover {
+  background: #108a00;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(20, 168, 0, 0.25);
 }
