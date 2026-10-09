@@ -673,3 +673,21 @@ body.dark .community-card {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(20, 168, 0, 0.25);
 }
+
+/* =========================================
+   CENTRED FOOTER — ALL PAGES
+   ========================================= */
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+  line-height: 1.6;
+}
